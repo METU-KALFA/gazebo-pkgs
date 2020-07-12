@@ -588,7 +588,7 @@ void GazeboGraspFix::OnUpdate()
     if (counts < this->maxGripCount) ++counts;
 
     // only need to attach object if the grip count threshold is exceeded
-    if (counts <= this->gripCountThreshold)
+    if (counts <= 1)
       continue;
 
     //gzmsg<<"GRIPPING "<<objName<<", grip count "<<counts<<" (threshold "<<this->gripCountThreshold<<")"<<std::endl;
