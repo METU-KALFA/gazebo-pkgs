@@ -25,6 +25,13 @@ void GazeboCubeSpawner::spawnCube(const std::string& name, const std::string& fr
     spawnPrimitive(name, true, frame_id, x, y, z, qx, qy, qz, qw, width, height, depth, mass);
 }
 
+void GazeboCubeSpawner::spawnCylinder(const std::string& name, const std::string& frame_id,
+    float x, float y, float z, float qx, float qy, float qz, float qw,
+    float width, float height, float depth, float mass)
+{
+    spawnPrimitive(name, false, frame_id, x, y, z, qx, qy, qz, qw, width, height, depth, mass);
+}
+
 void GazeboCubeSpawner::spawnPrimitive(const std::string& name, const bool doCube,
     const std::string& frame_id,
     float x, float y, float z, float qx, float qy, float qz, float qw,
