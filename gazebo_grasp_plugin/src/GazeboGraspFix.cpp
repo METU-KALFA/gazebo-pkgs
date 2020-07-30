@@ -576,7 +576,7 @@ void GazeboGraspFix::OnUpdate()
     // ------------------- 
 
     float minAngleDiff = this->forcesAngleTolerance; //120 * M_PI/180;
-    if (!CheckGrip(objContInfo.appliedForces, minAngleDiff, 0.3))
+    if (!CheckGrip(objContInfo.appliedForces, minAngleDiff, 0.2))
       continue;
 
     // add to "gripped objects"
@@ -588,7 +588,7 @@ void GazeboGraspFix::OnUpdate()
     if (counts < this->maxGripCount) ++counts;
 
     // only need to attach object if the grip count threshold is exceeded
-    if (counts >= 1)
+    if (counts >= 2)
       continue;
 
     gzmsg<<"GRIPPING "<<objName<<", grip count "<<counts<<" (threshold "<<this->gripCountThreshold<<")"<<std::endl;
